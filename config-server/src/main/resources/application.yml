@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: cloud-config-server
+  cloud:
+    config:
+      name: cloud-config-server
+      server:
+        git:
+          uri: https://github.com/itzhangwei/learn_cloud_config/config-repo
+          username: ENC(Kj+Kg4nY6TAvY1M8RkW9042ARSe6jVcfuRgyJdof72M=)
+          password: ENC(+u36aORUjP+RXiWslQbBBhg1ObPNxFJKYheLKqkdIPs=)
+
+server:
+  port: 8910
+  servlet:
+    context-path: /config/server
+
+jasypt:
+  encryptor:
+    # 加密盐
+    password: Everything is inferior, only reading is high.
