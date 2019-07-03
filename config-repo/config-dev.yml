@@ -1,8 +1,13 @@
 spring:
   application:
-    name: cloud-config-server-prod
+    name: cloud-config-client-dev
 
 server:
-  port: 8910
+  port: 8920
   servlet:
-    context-path: /config/server
+    context-path: /config/client
+
+
+my:
+  motto:
+    everything is inferior, only read is high
