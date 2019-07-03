@@ -6,3 +6,17 @@ spring:
       profile: dev
       # git分支
       label: master
+
+
+
+management:
+  endpoint:
+    env:
+      # 启用端点 env
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        # 使用项目路径 +/actuator/refresh 来刷新标记@RefreshScope注解的配置
+        include: refresh
+
