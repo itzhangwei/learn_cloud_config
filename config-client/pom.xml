@@ -40,6 +40,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${boot-version}</version>
         </dependency>
+        <!--监控功能，在服务端配置修改过后/refresh来刷新配置-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${boot-version}</version>
+        </dependency>
+
 
     </dependencies>
 
