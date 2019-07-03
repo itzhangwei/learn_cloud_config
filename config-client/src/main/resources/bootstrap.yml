@@ -19,4 +19,3 @@ management:
       exposure:
         # 使用项目路径 +/actuator/refresh 来刷新标记@RefreshScope注解的配置
         include: refresh
-

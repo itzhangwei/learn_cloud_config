@@ -2,6 +2,7 @@ package com.learn.cloud.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author zack.zhang
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2019-07-03 10:35
  */
 @SpringBootApplication
+@EnableDiscoveryClient
 public class ApplicationConfigClient {
 
     public static void main(String[] args) {

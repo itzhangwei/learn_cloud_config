@@ -22,3 +22,14 @@ jasypt:
   encryptor:
     # 加密盐
     password: Everything is inferior, only reading is high.
+
+
+eureka:
+  instance:
+    appname: cloud-config-server
+    # 在注册中心中显示ip地址
+    prefer-ip-address: true
+    instance-id: cloud-config-server:${server.port} #注册中心显示的名称
+  client:
+    service-url:
+      defaultZone: http://peer1:8710/eureka/eureka
