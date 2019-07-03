@@ -1,0 +1,24 @@
+package com.learn.cloud.config.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author zack.zhang
+ * @projectName learn_cloud_config
+ * @title HelloConfigController
+ * @package com.learn.cloud.config.controller
+ * @description 测试从配置中心获取的配置信息
+ * @date 2019-07-03 10:38
+ */
+@RestController
+public class HelloConfigController {
+    @Value(value = "${my.motto}")
+    private String motto;
+
+    @RequestMapping("/hello")
+    public String hello(){
+        return  "hello, my motto is :" +this.motto;
+    }
+}
