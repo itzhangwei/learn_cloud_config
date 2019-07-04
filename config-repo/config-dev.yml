@@ -1,4 +1,6 @@
-
+spring:
+  profiles:
+    include: public # 引入公用配置文件，多个用逗号分隔
 # 自定义参数
 my:
   motto: everything is inferior, only read is high

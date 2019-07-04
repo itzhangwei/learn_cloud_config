@@ -2,3 +2,6 @@ my:
   motto: 万般皆下品，惟有读书高
 
 
+spring:
+  profiles:
+    include: public # 引入公用配置文件，多个用逗号分隔
