@@ -10,7 +10,6 @@ server:
 
 # 自定义参数
 my:
-  motto:
-    everything is inferior, only read is high
+  motto: everything is inferior, only read is high
 #     三更灯火五更鸡，正是男儿读书时
 
