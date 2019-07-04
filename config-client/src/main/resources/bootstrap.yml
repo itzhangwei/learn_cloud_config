@@ -1,12 +1,26 @@
 spring:
+  application:
+    name: cloud-config-client-dev
   cloud:
     config:
-      uri: http://config:8910/config/server
-      name: config
-      profile: dev
-      # git分支
-      label: master
+      #  uri: http://config:8910/config/server # 从注册中心获取配置中心，这里去掉配置中心url
+      name: config # 配置文件名称
+      profile: dev # 配置文件环境
+      label: master  # git分支
 
+      discovery:
+        enabled: true # 开启config服务发现支持，从注册中心中查找发现配置中心服务
+        service-id: cloud-config-server # 配置中心服务名称,spring.application.name的值
+
+#  取消直链接配置中心，链接注册中心，需要讲注册中心配置配置到自己项目目录下
+eureka:
+  instance:
+    prefer-ip-address: true # 是否显示IP地址
+    appname: cloud-config-client-dev #eurka application中显示的项目名称
+    instance-id: cloud-config-client-dev:${server.port} # status 中显示的
+  client:
+    service-url:
+      defaultZone: http://peer1:8710/eureka/eureka # 第一个eureka是应为在项目中设置了servlet.context-path为eureka
 
 
 management:
@@ -19,3 +33,8 @@ management:
       exposure:
         # 使用项目路径 +/actuator/refresh 来刷新标记@RefreshScope注解的配置
         include: refresh
+
+server:
+  port: 8920
+  servlet:
+    context-path: /config/client
