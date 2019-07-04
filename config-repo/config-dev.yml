@@ -2,6 +2,7 @@ spring:
   application:
     name: cloud-config-client-dev
 
+
 server:
   port: 8920
   servlet:
@@ -12,14 +13,4 @@ my:
   motto:
     everything is inferior, only read is high
 #     三更灯火五更鸡，正是男儿读书时
-
-
-eureka:
-  instance:
-    prefer-ip-address: true # 是否显示IP地址
-    appname: cloud-config-client-dev #eurka application中显示的项目名称
-    instance-id: cloud-config-client-dev:${server.port} # status 中显示的
-  client:
-    service-url:
-      defaultZone: http://peer1:8710/eureka/eureka # 第一个eureka是应为在项目中设置了servlet.context-path为eureka
 
