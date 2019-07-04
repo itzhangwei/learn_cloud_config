@@ -15,8 +15,9 @@ spring:
 
 server:
   port: 8910
-  servlet:
-    context-path: /config/server
+  # 注释了 context-path，应为配置中心客户端通过eureka获取到的配置中心服务端是不带context-path的
+#  servlet:
+#    context-path: /config/server
 
 jasypt:
   encryptor:
