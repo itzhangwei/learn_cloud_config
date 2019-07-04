@@ -1,8 +1,9 @@
-my:
-  motto: 三更灯火五更鸡，正是男儿读书时
-
 spring:
   profiles:
     include: public # 引入公用配置文件，多个用逗号分隔
+
+my:
+  motto: 三更灯火五更鸡，正是男儿读书时
+
 
 
