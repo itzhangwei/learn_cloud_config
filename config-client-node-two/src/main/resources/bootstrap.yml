@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: config-client-node-two
+  cloud:
+    config:
+      #  uri: http://config:8910/config/server # 从注册中心获取配置中心，这里去掉配置中心url
+      name: config-node # 配置文件名称
+      profile: two # 配置文件环境
+      label: master  # git分支
+
+      discovery:
+        enabled: true # 开启config服务发现支持，从注册中心中查找发现配置中心服务
+        service-id: cloud-config-server # 配置中心服务名称,spring.application.name的值
+    bus:
+      trace:
+        enabled: true #   开启消息跟踪
+  rabbitmq:
+    host: 119.23.24.1
+    port: 5672
+    username: admin
+    password: admin
+
+#  取消直链接配置中心，链接注册中心，需要讲注册中心配置配置到自己项目目录下
+eureka:
+  instance:
+    prefer-ip-address: true # 是否显示IP地址
+    appname: config-client-node-two #eurka application中显示的项目名称
+    instance-id: config-client-node-two:${server.port} # status 中显示的
+  client:
+    service-url:
+      defaultZone: http://peer1:8710/eureka/eureka # 第一个eureka是应为在项目中设置了servlet.context-path为eureka
+
+
+management:
+  endpoint:
+    env:
+      # 启用端点 env
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        # 使用项目路径 +/actuator/bus-refresh 来刷新标记@RefreshScope注解的配置
+        include: "*"
+
+server:
+  port: 8940
+  servlet:
+    context-path: /config/client/two
+
+
