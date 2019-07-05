@@ -12,7 +12,14 @@ spring:
           password: ENC(+u36aORUjP+RXiWslQbBBhg1ObPNxFJKYheLKqkdIPs=)
           # git仓库下的目录，多个逗号分隔
           search-paths: config-repo
-
+    bus:
+      trace:
+        enabled: true # 开启消息跟踪
+  rabbitmq:
+    host: 119.23.24.1 # host 和 addresses 的区别在与host 只是ip地址，而 address 可以结合域名端口
+    port: 5672 # 默认的rabbitmq 的端口配置 15672是http后台管理端口，5672才是真正的客户端端口
+    username: admin
+    password: ENC(//IQCI6MWG6iE+itexcE+A==)
 server:
   port: 8910
   # 注释了 context-path，应为配置中心客户端通过eureka获取到的配置中心服务端是不带context-path的
@@ -34,3 +41,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://peer1:8710/eureka/eureka
+
+management:
+  endpoint:
+    env:
+      enabled: true # 启用端点 env
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 暴露出所有的url 使用服务端使用/bus/refresh 来刷新 GET方法

@@ -19,8 +19,11 @@ public class HelloConfigController {
     @Value(value = "${my.motto}")
     private String motto;
 
+    @Value(value = "${public.motto}")
+    private String publicMotto;
+
     @RequestMapping("/hello")
     public String hello(){
-        return  "hello, my motto is :" +this.motto;
+        return  "hello, my motto is :" +this.motto+"。\r\n public motto is：" +this.publicMotto;
     }
 }

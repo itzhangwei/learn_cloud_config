@@ -4,13 +4,21 @@ spring:
   cloud:
     config:
       #  uri: http://config:8910/config/server # 从注册中心获取配置中心，这里去掉配置中心url
-      name: config # 配置文件名称
+      name: config-node # 配置文件名称
       profile: dev # 配置文件环境
       label: master  # git分支
 
       discovery:
         enabled: true # 开启config服务发现支持，从注册中心中查找发现配置中心服务
         service-id: cloud-config-server # 配置中心服务名称,spring.application.name的值
+    bus:
+      trace:
+        enabled: true #   开启消息跟踪
+  rabbitmq:
+    host: 119.23.24.1
+    port: 5672 # 默认的rabbitmq 的15672是http后台管理端口 5673 则是真正的rabbitmq的客户端端口
+    username: admin
+    password: admin
 
 #  取消直链接配置中心，链接注册中心，需要讲注册中心配置配置到自己项目目录下
 eureka:
@@ -31,10 +39,12 @@ management:
   endpoints:
     web:
       exposure:
-        # 使用项目路径 +/actuator/refresh 来刷新标记@RefreshScope注解的配置
-        include: refresh
+        # 使用项目路径 +/actuator/bus-refresh 来刷新标记@RefreshScope注解的配置
+        include: "*"
 
 server:
   port: 8920
   servlet:
     context-path: /config/client
+
+
