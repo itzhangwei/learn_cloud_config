@@ -1,0 +1,10 @@
+server:
+  port: 8510
+  servlet:
+    context-path: /zuul
+
+zuul:
+  routes:
+    baidu:
+      path: /baidu/** # 重定向拦截url
+      url: http://www.baidu.com # 重定向目标url
