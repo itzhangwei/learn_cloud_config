@@ -17,6 +17,6 @@ zuul:
 
     api:
       path: /config/**
-      serviceId: cloud-config-client-dev # 重定向到eureka服务上
+      serviceId: cloud-config-client-dev # 重定向到eureka服务上，从eureka中获取到的服务，默认都是不带有项目的servlet.content-path路径的
 
 
