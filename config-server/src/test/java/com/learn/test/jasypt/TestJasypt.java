@@ -14,7 +14,12 @@ public class TestJasypt {
     public static void main(String[] args) {
         BasicTextEncryptor encryptor = new BasicTextEncryptor();
         encryptor.setPassword("Everything is inferior, only reading is high.");
-        String encrypt = encryptor.encrypt("~2Ga22K@Ah?g%+)-#>..");
+        // 加密
+        String encrypt = encryptor.encrypt("admin");
         System.out.println(encrypt);
+
+        // 解密
+        String password = encryptor.decrypt("AQhGAHeiSflZUWUehaYFmA==");
+        System.out.println(password);
     }
 }
