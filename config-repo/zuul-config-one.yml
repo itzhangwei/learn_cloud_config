@@ -11,4 +11,4 @@ zuul:
 
     api:
       path: /config/**
-      serviceId: cloud-config-dev # 重定向到eureka服务上
+      serviceId: cloud-config-client-dev # 重定向到eureka服务上
