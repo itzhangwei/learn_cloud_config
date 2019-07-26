@@ -1,0 +1,4 @@
+jasypt:
+  encryptor:
+    # 加密盐
+    password: Everything is inferior, only reading is high.
