@@ -1,6 +1,6 @@
 spring:
   profiles:
-    incolude:  mq
+    incolude: mq,encry
 
 
 server:
