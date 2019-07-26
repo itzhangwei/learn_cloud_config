@@ -1,7 +1,13 @@
+spring:
+  profiles:
+    incolude:  mq
+
+
 server:
   port: 8510
   servlet:
     context-path: /zuul
+
 
 zuul:
   routes:
@@ -12,3 +18,5 @@ zuul:
     api:
       path: /config/**
       serviceId: cloud-config-client-dev # 重定向到eureka服务上
+
+
