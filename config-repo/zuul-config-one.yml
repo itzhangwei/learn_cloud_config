@@ -8,3 +8,7 @@ zuul:
     baidu:
       path: /baidu/** # 重定向拦截url
       url: http://www.baidu.com # 重定向目标url
+
+    api:
+      path: /config/**
+      serviceId: cloud-config-dev # 重定向到eureka服务上
