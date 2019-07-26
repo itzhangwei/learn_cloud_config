@@ -1,0 +1,6 @@
+spring:
+  rabbitmq:
+    host: 119.23.24.1
+    port: 5672 # 默认的rabbitmq 的15672是http后台管理端口 5673 则是真正的rabbitmq的客户端端口
+    user: ENC(5GVFUva/XldfyKE7zii3xA==)
+    password: ENC(5GVFUva/XldfyKE7zii3xA==)
