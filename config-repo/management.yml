@@ -1,0 +1,6 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        # 监控功能，bus刷新配置文件
+        include: "*"
