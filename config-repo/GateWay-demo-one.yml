@@ -1,7 +1,10 @@
+
 server:
   port: 8510
 
 spring:
+  profiles:
+    include: management
   cloud:
     gateway:
       routes:
@@ -9,3 +12,5 @@ spring:
         uri: http://www.ityouknow.com #目标服务地址
         predicates: #路由条件
           Path=/spring-cloud
+
+
