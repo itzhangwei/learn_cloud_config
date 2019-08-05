@@ -5,9 +5,9 @@ spring:
   cloud:
     gateway:
       routes:
-        id: gateway-one #自定义路由
+       - id: gateway-one #自定义路由
         uri: http://www.ityouknow.com #目标服务地址
         predicates: #路由条件
-          Path=/spring-cloud
+          - Path=/spring-cloud
 
 
