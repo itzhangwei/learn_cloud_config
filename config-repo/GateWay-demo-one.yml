@@ -1,6 +1,6 @@
 
 server:
-  port: 8510
+  port: 8520
 
 spring:
   profiles:
