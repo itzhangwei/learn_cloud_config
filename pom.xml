@@ -14,6 +14,9 @@
     <packaging>pom</packaging>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <spring-cloud-version>2.1.1.RELEASE</spring-cloud-version>
         <boot-version>2.1.3.RELEASE</boot-version>
         <slf4j-version>1.7.25</slf4j-version>
@@ -23,6 +26,7 @@
         <rxjava-version>1.2.0</rxjava-version>
         <gson-version>2.8.5</gson-version>
         <httpclient-version>4.5.3</httpclient-version>
+        <snakeyaml-version>1.23</snakeyaml-version>
     </properties>
 
     <dependencyManagement>
@@ -248,13 +252,30 @@
                 <artifactId>httpclient</artifactId>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+            </dependency>
+
         </dependencies>
 
     </dependencyManagement>
 
     <build>
-        <pluginManagement>
-            <plugins>
+        <!--重要 如果不设置resource 会导致application.yaml中的@@找不到pom文件中的配置-->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
+        <!--重要 如果不设置resource 会导致application.yaml中的@@找不到pom文件中的配置-->
+
+        <plugins>
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
@@ -267,8 +288,20 @@
                         </execution>
                     </executions>
                 </plugin>
-            </plugins>
-        </pluginManagement>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+         </plugins>
     </build>
 
 </project>
