@@ -58,3 +58,10 @@ management:
     web:
       exposure:
         include: "*" # 暴露出所有的url 使用服务端使用/bus/refresh 来刷新 GET方法
+info:
+  app:
+    name: cloud-config-server
+    version: @project.version@
+    encoding: @project.build.sourceEncoding@
+    java:
+      version: @java.version@
