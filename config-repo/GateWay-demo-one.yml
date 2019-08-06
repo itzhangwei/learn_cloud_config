@@ -19,3 +19,11 @@ logging:
       springframework:
         cloud:
           gateway: debug
+
+info:
+  app:
+    name: gateway-demo-noe
+    version: @project.version@
+    encoding: @project.bulid.sourceEncoding@
+    java:
+      version: @java.version@
