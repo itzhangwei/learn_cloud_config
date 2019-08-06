@@ -20,10 +20,11 @@ logging:
         cloud:
           gateway: debug
 
-info:
-  app:
-    name: gateway-demo-noe
-    version: @project.version@
-    encoding: @project.bulid.sourceEncoding@
-    java:
-      version: @java.version@
+# info信息中的@@是读去maven中的配置，是在maven编译的时候把配置替换成对应的maven值，所以无法总config配置服务中获取
+#info:
+#  app:
+#    name: gateway-demo-noe
+#    version: @project.version@
+#    encoding: @project.bulid.sourceEncoding@
+#    java:
+#      version: @java.version@
