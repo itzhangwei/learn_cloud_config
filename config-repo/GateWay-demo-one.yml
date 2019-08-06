@@ -1,13 +1,21 @@
 
 spring:
-#  profiles:
-#    include: management
+  profiles:
+    include: management
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true #开启服务的注册发现，通过eureka的serviceId转发到具体的微服务实例
       routes:
       - id: gateway-one #自定义路由
         uri: http://www.ityouknow.com #目标服务地址
         predicates: #路由条件
         - Path=/spring-cloud
 
-
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: debug
