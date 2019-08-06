@@ -7,6 +7,7 @@ spring:
       discovery:
         locator:
           enabled: true #开启服务的注册发现，通过eureka的serviceId转发到具体的微服务实例
+          lower-case-service-id: true # 开启eureka中的服务名称小写，否则需要通过大写的服务名称访问
       routes:
       - id: gateway-one #自定义路由
         uri: http://www.ityouknow.com #目标服务地址
