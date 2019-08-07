@@ -13,6 +13,10 @@ spring:
         uri: http://www.ityouknow.com #目标服务地址
         predicates: #路由条件
         - Path=/spring-cloud
+      - id: add_request_parameter_routes
+        uri: http://localhost:8810/eureka/provider
+        filters:
+          - AddrequestParameter=foo, bar
 
 logging:
   level:
