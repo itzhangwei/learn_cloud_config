@@ -14,7 +14,7 @@ spring:
         predicates: #路由条件
         - Path=/spring-cloud
       - id: add_request_parameter_routes
-        uri: http://localhost:8810/eureka/provider
+        uri: http://localhost:8810
         filters:
         - AddRequestParameter=foo, bar
         predicates:
