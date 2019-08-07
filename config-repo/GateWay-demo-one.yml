@@ -16,7 +16,7 @@ spring:
       - id: add_request_parameter_routes
         uri: http://localhost:8810/eureka/provider
         filters:
-          - AddrequestParameter=foo, bar
+        - AddrequestParameter=foo, bar
 
 logging:
   level:
