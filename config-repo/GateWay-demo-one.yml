@@ -17,6 +17,8 @@ spring:
         uri: http://localhost:8810/eureka/provider
         filters:
         - AddrequestParameter=foo, bar
+        predicates:
+        - Method=GET
 
 logging:
   level:
