@@ -26,6 +26,8 @@ eureka:
     prefer-ip-address: true # 是否显示IP地址
     appname: cloud-config-client-dev #eurka application中显示的项目名称
     instance-id: cloud-config-client-dev:${server.port} # status 中显示的
+    lease-renewal-interval-in-seconds: 10 # 每隔十秒向注册中心发送一次心跳，证明自己还活着
+    lease-expiration-duration-in-seconds: 20 # 20s之类没有向eureka注册中心发送心跳就表示自己'死'了，eureka会剔除此服务
   client:
     service-url:
       defaultZone: http://peer1:8710/eureka/eureka # 第一个eureka是应为在项目中设置了servlet.context-path为eureka
