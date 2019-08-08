@@ -26,4 +26,10 @@ public class HelloConfigController {
     public String hello(){
         return  "hello, my motto is :" +this.motto+"。\r\n public motto is：" +this.publicMotto;
     }
+
+
+    @RequestMapping("/foo")
+    public String foo(String foo){
+        return  "hello, my motto is :" +this.motto+"。\r\n foo is：" + foo;
+    }
 }
